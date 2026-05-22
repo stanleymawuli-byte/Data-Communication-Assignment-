@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Data Communication — Stanley Mawuli Ataglo | PUIT/24210131 | Pentecost University</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- VIDEO BACKGROUND -->
+<div id="vbg">
+  <video autoplay muted loop playsinline id="bgvid">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+  </video>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DataComm // S.M. Ataglo</div>
+  <ul class="nav-links">
+    <a href="#profile">Profile</a>
+    <a href="#topics">Topics</a>
+    <a href="#videos">Videos</a>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="profile">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="profile-wrap">
+    <div class="profile-ring"></div>
+    <div class="profile-photo">
+      <img src="data:image/jpeg;base64,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" alt="Stanley Ataglo"/>
+    </div>
+  </div>
+
+  <h1>STANLEY MAWULI <em>ATAGLO</em></h1>
+  <div class="student-id">Stanley Mawuli Ataglo &nbsp;·&nbsp; PUIT/24210131 &nbsp;·&nbsp; Pentecost University, Ghana</div>
+  <p class="bio">
+    Network Administrator &amp; IT student at Pentecost University, Ghana. Passionate about computer networks,
+    telecommunications infrastructure, and data systems. This page is a complete summary of the
+    <strong style="color:var(--text)">Data Communication</strong> course covering everything from the
+    history of the telegraph to modern satellite systems.
+  </p>
+  <div class="badge-row">
+    <span class="badge badge-cyan">📡 Data Communication</span>
+    <span class="badge badge-gold">🎓 Pentecost University</span>
+  </div>
+</section>
+
+<!-- FILE LINKS -->
+<div class="files-bar">
+ 
+  
+  <a class="flink fl-doc" href="term_paper_ataglo.docx">📝 Assignment (DOCX)</a>
+  <a class="flink" href="term_paper_ataglo.docx" download style="color:#a78bfa;border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.07);">📜 Term Paper (DOCX)</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<main id="topics">
+
+<!-- ══ SECTION 1: INTRODUCTION ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">01</span><h2>Introduction to Data Communication</h2></div>
+  <p>Data communication is the exchange of data between two devices via a transmission medium using an agreed set of rules called a <strong class="hl">protocol</strong>. Five key components make up every communication system:</p>
+  <ul>
+    <li><strong>Message</strong> — the information (text, number, image, audio, video) being communicated</li>
+    <li><strong>Sender</strong> — the device that sends the data message (computer, phone, camera)</li>
+    <li><strong>Receiver</strong> — the device that receives the message</li>
+    <li><strong>Transmission Medium</strong> — the physical path data travels (wire, fiber, radio)</li>
+    <li><strong>Protocol</strong> — the rules governing data communication (TCP/IP, HTTP, SMTP)</li>
+  </ul>
+  <h3>Data Flow Modes</h3>
+  <table class="tbl">
+    <tr><th>Mode</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Simplex</strong></td><td>One-way only</td><td>Keyboard → Computer</td></tr>
+    <tr><td><strong>Half-Duplex</strong></td><td>Two-way but not simultaneously</td><td>Walkie-talkie</td></tr>
+    <tr><td><strong>Full-Duplex</strong></td><td>Two-way simultaneously</td><td>Telephone</td></tr>
+  </table>
+</div>
+
+<!-- ══ SECTION 2: TELEGRAPH & MORSE ══ -->
+<div class="scard" id="telegraph">
+  <div class="sh"><span class="snum" style="color:var(--gold);background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.3);">HIST</span><h2>Telegraph &amp; Morse Code</h2></div>
+
+  <div class="hbox hbox-gold">
+    ⚡ The <strong>electric telegraph</strong> was the world's first electrical long-distance communication system — the direct ancestor of all modern digital networks.
+  </div>
+
+  <h3>Historical Timeline</h3>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-year">1753</div><div class="tl-text">Scottish scientist Charles Morrison proposes electric telegraph using separate wires for each letter</div></div>
+    <div class="tl-item"><div class="tl-year">1820s</div><div class="tl-text">Hans Christian Ørsted discovers electromagnetism — the scientific foundation for telegraphs</div></div>
+    <div class="tl-item"><div class="tl-year">1837</div><div class="tl-text"><strong>Samuel Morse</strong> and <strong>Alfred Vail</strong> patent the first practical electric telegraph in the United States</div></div>
+    <div class="tl-item"><div class="tl-year">1844</div><div class="tl-text">First long-distance message sent: <em>"What hath God wrought"</em> — Washington D.C. to Baltimore (64 km) by Samuel Morse</div></div>
+    <div class="tl-item"><div class="tl-year">1851</div><div class="tl-text">First undersea telegraph cable laid across the English Channel between England and France</div></div>
+    <div class="tl-item"><div class="tl-year">1866</div><div class="tl-text">Transatlantic telegraph cable successfully completed — connecting Europe and North America</div></div>
+    <div class="tl-item"><div class="tl-year">1876</div><div class="tl-text">Alexander Graham Bell invents the telephone — beginning the era of voice communication</div></div>
+    <div class="tl-item"><div class="tl-year">1920s</div><div class="tl-text">Commercial telegraph services peak; Morse code becomes the universal language of radio operators</div></div>
+    <div class="tl-item"><div class="tl-year">1999</div><div class="tl-text">France is last major country to drop Morse code as a maritime distress requirement</div></div>
+  </div>
+
+  <h3>How the Telegraph Worked</h3>
+  <p>An operator pressed a <strong>telegraph key</strong> to complete an electrical circuit, sending pulses of current down a wire. Short pulses were <em>dots</em> (·) and long pulses were <em>dashes</em> (–). The receiver heard clicks or saw marks on paper tape. This is the original <strong>binary signalling system</strong> — the same on/off principle used in modern digital computers.</p>
+
+  <!-- Telegraph diagram SVG -->
+  <div class="sat-diagram" style="margin:.9rem 0;">
+    <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+      <rect width="700" height="160" fill="#060e1a" rx="8"/>
+      <!-- Sender box -->
+      <rect x="20" y="50" width="120" height="60" rx="6" fill="#0d1e35" stroke="#1b2d45"/>
+      <text x="80" y="78" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="IBM Plex Mono">SENDER</text>
+      <text x="80" y="95" text-anchor="middle" fill="#607a95" font-size="9" font-family="IBM Plex Mono">Telegraph Key</text>
+      <!-- Wire -->
+      <line x1="140" y1="80" x2="240" y2="80" stroke="#00e5ff" stroke-width="2" stroke-dasharray="6,3"/>
+      <text x="190" y="70" text-anchor="middle" fill="#607a95" font-size="9" font-family="IBM Plex Mono">Electric wire</text>
+      <!-- Signal pulses -->
+      <rect x="245" y="40" width="210" height="80" rx="6" fill="#060e1a" stroke="#1b2d45"/>
+      <text x="350" y="57" text-anchor="middle" fill="#00e5ff" font-size="10" font-family="IBM Plex Mono">SIGNAL PULSES</text>
+      <polyline points="260,90 270,90 270,65 280,65 280,90 295,90 295,65 305,65 305,90 315,90 315,90 315,65 330,65 330,90 345,90 345,65 370,65 370,90 400,90 400,65 440,65 440,90 445,90" fill="none" stroke="#00e5ff" stroke-width="2"/>
+      <text x="350" y="115" text-anchor="middle" fill="#fbbf24" font-size="9" font-family="IBM Plex Mono">· · · — — — · · ·  (SOS)</text>
+      <!-- Wire 2 -->
+      <line x1="455" y1="80" x2="555" y2="80" stroke="#00e5ff" stroke-width="2" stroke-dasharray="6,3"/>
+      <!-- Receiver box -->
+      <rect x="560" y="50" width="120" height="60" rx="6" fill="#0d1e35" stroke="#1b2d45"/>
+      <text x="620" y="78" text-anchor="middle" fill="#22c55e" font-size="11" font-family="IBM Plex Mono">RECEIVER</text>
+      <text x="620" y="95" text-anchor="middle" fill="#607a95" font-size="9" font-family="IBM Plex Mono">Sounder/Paper</text>
+    </svg>
+  </div>
+
+  <h3>Morse Code — Full Reference (A–Z &amp; 0–9)</h3>
+  <div class="morse-grid">
+    <div class="mc"><span class="mc-l">A</span><span class="mc-c">· –</span></div>
+    <div class="mc"><span class="mc-l">B</span><span class="mc-c">– · · ·</span></div>
+    <div class="mc"><span class="mc-l">C</span><span class="mc-c">– · – ·</span></div>
+    <div class="mc"><span class="mc-l">D</span><span class="mc-c">– · ·</span></div>
+    <div class="mc"><span class="mc-l">E</span><span class="mc-c">·</span></div>
+    <div class="mc"><span class="mc-l">F</span><span class="mc-c">· · – ·</span></div>
+    <div class="mc"><span class="mc-l">G</span><span class="mc-c">– – ·</span></div>
+    <div class="mc"><span class="mc-l">H</span><span class="mc-c">· · · ·</span></div>
+    <div class="mc"><span class="mc-l">I</span><span class="mc-c">· ·</span></div>
+    <div class="mc"><span class="mc-l">J</span><span class="mc-c">· – – –</span></div>
+    <div class="mc"><span class="mc-l">K</span><span class="mc-c">– · –</span></div>
+    <div class="mc"><span class="mc-l">L</span><span class="mc-c">· – · ·</span></div>
+    <div class="mc"><span class="mc-l">M</span><span class="mc-c">– –</span></div>
+    <div class="mc"><span class="mc-l">N</span><span class="mc-c">– ·</span></div>
+    <div class="mc"><span class="mc-l">O</span><span class="mc-c">– – –</span></div>
+    <div class="mc"><span class="mc-l">P</span><span class="mc-c">· – – ·</span></div>
+    <div class="mc"><span class="mc-l">Q</span><span class="mc-c">– – · –</span></div>
+    <div class="mc"><span class="mc-l">R</span><span class="mc-c">· – ·</span></div>
+    <div class="mc"><span class="mc-l">S</span><span class="mc-c">· · ·</span></div>
+    <div class="mc"><span class="mc-l">T</span><span class="mc-c">–</span></div>
+    <div class="mc"><span class="mc-l">U</span><span class="mc-c">· · –</span></div>
+    <div class="mc"><span class="mc-l">V</span><span class="mc-c">· · · –</span></div>
+    <div class="mc"><span class="mc-l">W</span><span class="mc-c">· – –</span></div>
+    <div class="mc"><span class="mc-l">X</span><span class="mc-c">– · · –</span></div>
+    <div class="mc"><span class="mc-l">Y</span><span class="mc-c">– · – –</span></div>
+    <div class="mc"><span class="mc-l">Z</span><span class="mc-c">– – · ·</span></div>
+    <div class="mc"><span class="mc-l">0</span><span class="mc-c">– – – – –</span></div>
+    <div class="mc"><span class="mc-l">1</span><span class="mc-c">· – – – –</span></div>
+    <div class="mc"><span class="mc-l">2</span><span class="mc-c">· · – – –</span></div>
+    <div class="mc"><span class="mc-l">3</span><span class="mc-c">· · · – –</span></div>
+    <div class="mc"><span class="mc-l">4</span><span class="mc-c">· · · · –</span></div>
+    <div class="mc"><span class="mc-l">5</span><span class="mc-c">· · · · ·</span></div>
+    <div class="mc"><span class="mc-l">6</span><span class="mc-c">– · · · ·</span></div>
+    <div class="mc"><span class="mc-l">7</span><span class="mc-c">– – · · ·</span></div>
+    <div class="mc"><span class="mc-l">8</span><span class="mc-c">– – – · ·</span></div>
+    <div class="mc"><span class="mc-l">9</span><span class="mc-c">– – – – ·</span></div>
+  </div>
+
+  <div class="encoder">
+    <p style="color:var(--text);font-weight:600;margin-bottom:.6rem;font-size:.85rem;">🔡 Live Morse Encoder — Type to Translate</p>
+    <input id="minput" type="text" placeholder="Type any text e.g. GHANA" />
+    <div class="encoder-out" id="mout"></div>
+    <p class="encoder-hint">· = dot &nbsp;|&nbsp; – = dash &nbsp;|&nbsp; / = word space</p>
+  </div>
+</div>
+
+<!-- ══ SECTION 3: OSI MODEL ══ -->
+<div class="scard" id="osi">
+  <div class="sh"><span class="snum">02</span><h2>OSI Model — 7 Layers</h2></div>
+  <p>The <strong class="hl">Open Systems Interconnection (OSI)</strong> model is a conceptual framework that standardises how different network devices communicate. It divides communication into 7 layers, each with a specific function.</p>
+
+  <div class="osi-stack">
+    <div class="osi-layer l7"><span class="ol-num">7</span><div><span class="ol-name">Application</span><br/><span style="font-size:.75rem;opacity:.7">HTTP, FTP, SMTP, DNS, Telnet</span></div><span class="ol-pdu">Data</span></div>
+    <div class="osi-layer l6"><span class="ol-num">6</span><div><span class="ol-name">Presentation</span><br/><span style="font-size:.75rem;opacity:.7">Encryption, Compression, JPEG, MPEG</span></div><span class="ol-pdu">Data</span></div>
+    <div class="osi-layer l5"><span class="ol-num">5</span><div><span class="ol-name">Session</span><br/><span style="font-size:.75rem;opacity:.7">NetBIOS, RPC, PPTP — manages sessions</span></div><span class="ol-pdu">Data</span></div>
+    <div class="osi-layer l4"><span class="ol-num">4</span><div><span class="ol-name">Transport</span><br/><span style="font-size:.75rem;opacity:.7">TCP, UDP — segmentation, reliability</span></div><span class="ol-pdu">Segment</span></div>
+    <div class="osi-layer l3"><span class="ol-num">3</span><div><span class="ol-name">Network</span><br/><span style="font-size:.75rem;opacity:.7">IP, ICMP, OSPF — routing &amp; addressing</span></div><span class="ol-pdu">Packet</span></div>
+    <div class="osi-layer l2"><span class="ol-num">2</span><div><span class="ol-name">Data Link</span><br/><span style="font-size:.75rem;opacity:.7">Ethernet, MAC, PPP — framing</span></div><span class="ol-pdu">Frame</span></div>
+    <div class="osi-layer l1"><span class="ol-num">1</span><div><span class="ol-name">Physical</span><br/><span style="font-size:.75rem;opacity:.7">Bits on wire — cables, hubs, NIC</span></div><span class="ol-pdu">Bits</span></div>
+  </div>
+
+  <div class="hbox hbox-cyan" style="margin-top:.9rem;">
+    <strong>Memory aid:</strong> <em>"All People Seem To Need Data Processing"</em> (Layer 7→1) &nbsp;|&nbsp; <em>"Please Do Not Throw Sausage Pizza Away"</em> (Layer 1→7)
+  </div>
+</div>
+
+<!-- ══ SECTION 4: TCP/IP ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">03</span><h2>TCP/IP Protocol Suite</h2></div>
+  <p>TCP/IP is the practical protocol stack used by the internet. It has <strong class="hl">4 layers</strong> (compared to OSI's 7), mapping roughly to the OSI model.</p>
+
+  <div class="tcpip-stack">
+    <div class="tcp-layer tc1"><div class="tcp-lname">Application</div><div class="tcp-proto">HTTP · FTP · DNS · SMTP · SSH</div></div>
+    <div class="tcp-layer tc2"><div class="tcp-lname">Transport</div><div class="tcp-proto">TCP (reliable) · UDP (fast)</div></div>
+    <div class="tcp-layer tc3"><div class="tcp-lname">Internet</div><div class="tcp-proto">IP · ICMP · ARP · OSPF · BGP</div></div>
+    <div class="tcp-layer tc4"><div class="tcp-lname">Network Access</div><div class="tcp-proto">Ethernet · Wi-Fi · PPP · DSL</div></div>
+  </div>
+
+  <h3>TCP vs UDP</h3>
+  <table class="tbl">
+    <tr><th>Feature</th><th>TCP</th><th>UDP</th></tr>
+    <tr><td>Connection</td><td><strong>Connection-oriented</strong> (3-way handshake)</td><td>Connectionless</td></tr>
+    <tr><td>Reliability</td><td>Guaranteed delivery, ACK, retransmit</td><td>No guarantee — best effort</td></tr>
+    <tr><td>Speed</td><td>Slower due to overhead</td><td><strong>Faster</strong></td></tr>
+    <tr><td>Use case</td><td>HTTP, Email, File Transfer</td><td>Video streaming, VoIP, DNS</td></tr>
+  </table>
+</div>
+
+<!-- ══ SECTION 5: PDU ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">04</span><h2>Protocol Data Unit (PDU)</h2></div>
+  <p>A <strong class="hl">PDU</strong> is the specific block of data used by each OSI layer. As data moves down the layers from sender to receiver, each layer adds its own header (encapsulation). The receiver strips these off going back up (de-encapsulation).</p>
+
+  <h3>PDU Names per Layer</h3>
+  <table class="tbl">
+    <tr><th>OSI Layer</th><th>PDU Name</th><th>What it contains</th></tr>
+    <tr><td>Application / Presentation / Session (7–5)</td><td><strong>Data</strong></td><td>User data / application payload</td></tr>
+    <tr><td>Transport (4)</td><td><strong>Segment (TCP) / Datagram (UDP)</strong></td><td>Port numbers, sequence numbers</td></tr>
+    <tr><td>Network (3)</td><td><strong>Packet</strong></td><td>Source &amp; destination IP addresses</td></tr>
+    <tr><td>Data Link (2)</td><td><strong>Frame</strong></td><td>MAC addresses, error checking (CRC)</td></tr>
+    <tr><td>Physical (1)</td><td><strong>Bits</strong></td><td>0s and 1s as electrical/optical signals</td></tr>
+  </table>
+
+  <h3>Encapsulation Process</h3>
+  <div class="hbox hbox-cyan">
+    Sender: Data → Segment → Packet → Frame → Bits (adding headers at each step)<br/>
+    Receiver: Bits → Frame → Packet → Segment → Data (removing headers at each step)
+  </div>
+
+  <h3>Infrastructure &amp; Implementation</h3>
+  <ul>
+    <li><strong>Routers</strong> operate at Layer 3 — they read IP packet headers and forward them</li>
+    <li><strong>Switches</strong> operate at Layer 2 — they read MAC addresses in frames</li>
+    <li><strong>Hubs/Repeaters</strong> operate at Layer 1 — they simply amplify bits</li>
+    <li><strong>Firewalls</strong> can operate at multiple layers, filtering frames, packets, or application data</li>
+    <li>PDU inspection is used in <strong>Deep Packet Inspection (DPI)</strong> for security and QoS</li>
+  </ul>
+</div>
+
+<!-- ══ SECTION 6: TRANSMISSION MEDIUM ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">05</span><h2>Transmission Medium</h2></div>
+  <p>The physical path along which data travels from sender to receiver. Two main categories exist:</p>
+
+  <h3>Guided (Wired) Media</h3>
+  <table class="tbl">
+    <tr><th>Medium</th><th>Speed</th><th>Distance</th><th>Interference</th></tr>
+    <tr><td><strong>Twisted-Pair (UTP/STP)</strong></td><td>Up to 10 Gbps</td><td>100 m (LAN)</td><td>Moderate</td></tr>
+    <tr><td><strong>Coaxial Cable</strong></td><td>Up to 10 Gbps</td><td>Several km</td><td>Low</td></tr>
+    <tr><td><strong>Fiber-Optic</strong></td><td>Terabits/s</td><td>Thousands km</td><td>None (light)</td></tr>
+  </table>
+
+  <h3>Unguided (Wireless) Media</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Frequency</th><th>Range</th><th>Use</th></tr>
+    <tr><td><strong>Radio Waves</strong></td><td>3 Hz – 1 GHz</td><td>Global (AM/FM)</td><td>Broadcasting, Wi-Fi</td></tr>
+    <tr><td><strong>Microwaves</strong></td><td>1 – 300 GHz</td><td>Line-of-sight</td><td>Cellular, satellite</td></tr>
+    <tr><td><strong>Infrared</strong></td><td>300 GHz – 400 THz</td><td>Very short</td><td>Remote controls, IrDA</td></tr>
+  </table>
+
+  <div class="hbox hbox-green">
+    <strong>Fiber-optic</strong> cables use light pulses (photons) instead of electrical signals — providing the highest bandwidth and immunity to electromagnetic interference (EMI).
+  </div>
+</div>
+
+<!-- ══ SECTION 7: FREQUENCY & PERIOD ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">06</span><h2>Frequency &amp; Period</h2></div>
+  <p>Frequency and period are fundamental concepts in understanding how signals are transmitted.</p>
+
+  <h3>Key Formulas</h3>
+  <div class="formula">
+    <span class="formula-eq">f = 1 / T</span>
+    <span class="formula-desc"><strong>Frequency</strong> = 1 ÷ Period &nbsp;|&nbsp; Unit: Hertz (Hz)</span>
+  </div>
+  <div class="formula">
+    <span class="formula-eq">T = 1 / f</span>
+    <span class="formula-desc"><strong>Period</strong> = 1 ÷ Frequency &nbsp;|&nbsp; Unit: Seconds (s)</span>
+  </div>
+  <div class="formula">
+    <span class="formula-eq">v = f × λ</span>
+    <span class="formula-desc"><strong>Wave speed</strong> = Frequency × Wavelength</span>
+  </div>
+  <div class="formula">
+    <span class="formula-eq">B = f<sub>high</sub> − f<sub>low</sub></span>
+    <span class="formula-desc"><strong>Bandwidth</strong> = Highest frequency − Lowest frequency</span>
+  </div>
+
+  <h3>Frequency Spectrum</h3>
+  <table class="tbl">
+    <tr><th>Name</th><th>Range</th><th>Application</th></tr>
+    <tr><td>ELF – VLF</td><td>3 Hz – 30 kHz</td><td>Submarine comms, power lines</td></tr>
+    <tr><td>LF – MF (AM Radio)</td><td>30 kHz – 3 MHz</td><td>AM broadcasting, navigation</td></tr>
+    <tr><td>HF (Short Wave)</td><td>3 – 30 MHz</td><td>Shortwave radio, CB radio</td></tr>
+    <tr><td>VHF (FM/TV)</td><td>30 – 300 MHz</td><td>FM radio, analog TV, aviation</td></tr>
+    <tr><td>UHF (Mobile/TV)</td><td>300 MHz – 3 GHz</td><td>4G/LTE, Wi-Fi, TV</td></tr>
+    <tr><td>SHF (Microwave)</td><td>3 – 30 GHz</td><td>5G, satellite, radar</td></tr>
+    <tr><td>EHF (mmWave)</td><td>30 – 300 GHz</td><td>5G mmWave, security scanners</td></tr>
+  </table>
+</div>
+
+<!-- ══ SECTION 8: TRANSMISSION IMPAIRMENT ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">07</span><h2>Transmission Impairment</h2></div>
+  <p>Signals travelling through media are subject to impairment — they degrade or become distorted. Three main types of impairment affect data communication:</p>
+
+  <h3>1. Attenuation</h3>
+  <div class="hbox hbox-red">
+    The loss of energy as a signal travels through a medium. The further it travels, the weaker it gets. Solved with <strong>amplifiers</strong> (analog) and <strong>repeaters</strong> (digital).
+  </div>
+  <div class="formula">
+    <span class="formula-eq">dB = 10 × log₁₀(P₂/P₁)</span>
+    <span class="formula-desc">Attenuation measured in decibels (dB). Negative dB = signal loss.</span>
+  </div>
+
+  <h3>2. Distortion</h3>
+  <div class="hbox hbox-gold">
+    Different frequency components of a signal travel at different speeds through a medium, causing the signal shape to change. Common in composite signals. Equalisation circuits compensate for distortion.
+  </div>
+
+  <h3>3. Noise</h3>
+  <table class="tbl">
+    <tr><th>Noise Type</th><th>Cause</th></tr>
+    <tr><td><strong>Thermal Noise</strong></td><td>Random motion of electrons; present in all electronic devices</td></tr>
+    <tr><td><strong>Induced Noise</strong></td><td>Motors, appliances — external electromagnetic fields</td></tr>
+    <tr><td><strong>Crosstalk</strong></td><td>One wire picks up signal from an adjacent wire</td></tr>
+    <tr><td><strong>Impulse Noise</strong></td><td>Sudden spikes — lightning, power surges</td></tr>
+  </table>
+
+  <div class="formula">
+    <span class="formula-eq">SNR = Signal Power / Noise Power</span>
+    <span class="formula-desc">Signal-to-Noise Ratio — higher is better</span>
+  </div>
+  <div class="formula">
+    <span class="formula-eq">SNR<sub>dB</sub> = 10 × log₁₀(SNR)</span>
+    <span class="formula-desc">SNR expressed in decibels</span>
+  </div>
+</div>
+
+<!-- ══ SECTION 9: SATELLITES ══ -->
+<div class="scard" id="satellites">
+  <div class="sh"><span class="snum">08</span><h2>Satellites — History &amp; Geostationary Orbit</h2></div>
+
+  <h3>History of Satellites</h3>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-year">1945</div><div class="tl-text">Arthur C. Clarke proposes geostationary communication satellites in <em>Wireless World</em> magazine — the concept is named the "Clarke Orbit"</div></div>
+    <div class="tl-item"><div class="tl-year">1957</div><div class="tl-text"><strong>Sputnik 1</strong> (USSR) — first artificial Earth satellite. Transmitted a simple radio beep, proving satellite communication was possible</div></div>
+    <div class="tl-item"><div class="tl-year">1958</div><div class="tl-text"><strong>Explorer 1</strong> (USA, NASA) — first American satellite. Discovered the Van Allen radiation belts</div></div>
+    <div class="tl-item"><div class="tl-year">1962</div><div class="tl-text"><strong>Telstar 1</strong> — first active communications satellite; relayed the first transatlantic TV pictures between USA and Europe</div></div>
+    <div class="tl-item"><div class="tl-year">1964</div><div class="tl-text"><strong>Syncom 3</strong> — first true geostationary satellite; broadcast the 1964 Tokyo Olympics to USA</div></div>
+    <div class="tl-item"><div class="tl-year">1965</div><div class="tl-text"><strong>Intelsat I (Early Bird)</strong> — first commercial geostationary communications satellite; 240 telephone circuits</div></div>
+    <div class="tl-item"><div class="tl-year">1972</div><div class="tl-text"><strong>Anik A1</strong> (Canada) — first domestic geostationary satellite; served the entire Canadian landmass</div></div>
+    <div class="tl-item"><div class="tl-year">1997</div><div class="tl-text">GPS becomes fully operational with 24 satellites; now over 30 satellites for global coverage</div></div>
+    <div class="tl-item"><div class="tl-year">2019–now</div><div class="tl-text"><strong>Starlink (SpaceX)</strong> — LEO mega-constellation; 5,000+ satellites providing global broadband internet</div></div>
+  </div>
+
+  <h3>Geostationary Satellites (GEO)</h3>
+  <div class="hbox hbox-cyan">
+    A geostationary satellite orbits Earth at exactly <strong>35,786 km</strong> above the equator, travelling at the same angular speed as Earth's rotation — making it appear <strong>stationary</strong> from the ground.
+  </div>
+
+  <!-- Satellite orbit diagram -->
+  <div class="sat-diagram">
+    <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+      <rect width="640" height="320" fill="#040910" rx="8"/>
+      <!-- Stars -->
+      <circle cx="30" cy="20" r="1" fill="#607a95"/><circle cx="80" cy="50" r="1.2" fill="#607a95"/>
+      <circle cx="580" cy="30" r="1" fill="#607a95"/><circle cx="610" cy="80" r="1.3" fill="#607a95"/>
+      <circle cx="20" cy="280" r="1" fill="#607a95"/><circle cx="620" cy="260" r="1" fill="#607a95"/>
+      <circle cx="100" cy="300" r="1.2" fill="#607a95"/><circle cx="500" cy="15" r="1" fill="#607a95"/>
+      <!-- GEO orbit ring -->
+      <ellipse cx="320" cy="200" rx="270" ry="80" fill="none" stroke="rgba(0,229,255,.2)" stroke-width="1.5" stroke-dasharray="8,4"/>
+      <text x="320" y="290" text-anchor="middle" fill="rgba(0,229,255,.5)" font-size="10" font-family="IBM Plex Mono">GEO Orbit — 35,786 km altitude</text>
+      <!-- MEO orbit -->
+      <ellipse cx="320" cy="200" rx="200" ry="55" fill="none" stroke="rgba(251,191,36,.15)" stroke-width="1" stroke-dasharray="6,4"/>
+      <text x="520" y="190" fill="rgba(251,191,36,.5)" font-size="9" font-family="IBM Plex Mono">MEO ~20,000km</text>
+      <!-- LEO orbit -->
+      <ellipse cx="320" cy="200" rx="130" ry="35" fill="none" stroke="rgba(34,197,94,.2)" stroke-width="1" stroke-dasharray="5,4"/>
+      <text x="460" y="215" fill="rgba(34,197,94,.5)" font-size="9" font-family="IBM Plex Mono">LEO ~500km</text>
+      <!-- Earth -->
+      <circle cx="320" cy="200" r="55" fill="#0d2038" stroke="#1b4060" stroke-width="2"/>
+      <text x="320" y="197" text-anchor="middle" fill="#60a5fa" font-size="13" font-family="IBM Plex Mono" font-weight="bold">EARTH</text>
+      <text x="320" y="213" text-anchor="middle" fill="#607a95" font-size="9" font-family="IBM Plex Mono">6,371 km radius</text>
+      <!-- GEO Satellite -->
+      <rect x="570" y="187" width="26" height="14" rx="2" fill="#00e5ff" opacity=".85"/>
+      <line x1="560" y1="194" x2="570" y2="194" stroke="#00e5ff" stroke-width="1.5"/>
+      <line x1="596" y1="194" x2="608" y2="194" stroke="#00e5ff" stroke-width="1.5"/>
+      <text x="583" y="177" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="IBM Plex Mono">GEO SAT</text>
+      <!-- Signal lines from GEO sat to Earth -->
+      <line x1="575" y1="195" x2="355" y2="175" stroke="rgba(0,229,255,.4)" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="575" y1="197" x2="380" y2="245" stroke="rgba(0,229,255,.4)" stroke-width="1" stroke-dasharray="4,3"/>
+      <!-- Ground stations -->
+      <polygon points="200,260 207,240 214,260" fill="#22c55e" opacity=".8"/>
+      <text x="207" y="270" text-anchor="middle" fill="#22c55e" font-size="8" font-family="IBM Plex Mono">Station A</text>
+      <polygon points="430,255 437,235 444,255" fill="#22c55e" opacity=".8"/>
+      <text x="437" y="265" text-anchor="middle" fill="#22c55e" font-size="8" font-family="IBM Plex Mono">Station B</text>
+      <!-- Labels -->
+      <text x="30" y="35" fill="#607a95" font-size="9" font-family="IBM Plex Mono">↑ Deep Space</text>
+    </svg>
+  </div>
+
+  <h3>Satellite Orbit Comparison</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Altitude</th><th>Latency</th><th>Coverage</th><th>Use</th></tr>
+    <tr><td><strong>LEO</strong></td><td>160–2,000 km</td><td>20–40 ms</td><td>Small</td><td>Starlink, ISS</td></tr>
+    <tr><td><strong>MEO</strong></td><td>2,000–35,786 km</td><td>100–300 ms</td><td>Medium</td><td>GPS, Galileo</td></tr>
+    <tr><td><strong>GEO</strong></td><td>35,786 km</td><td>~600 ms</td><td>1/3 of Earth</td><td>TV, weather</td></tr>
+    <tr><td><strong>HEO</strong></td><td>Elliptical</td><td>Variable</td><td>Polar regions</td><td>Molniya comms</td></tr>
+  </table>
+</div>
+
+<!-- ══ SECTION 10: INTERNET ══ -->
+<div class="scard" id="internet">
+  <div class="sh"><span class="snum">09</span><h2>The Internet</h2></div>
+  <p>The <strong class="hl">Internet</strong> is a global network of interconnected computers and networks that communicate using the TCP/IP protocol suite. It evolved from ARPANET (1969) into today's worldwide infrastructure.</p>
+
+  <h3>Key Internet Concepts</h3>
+  <ul>
+    <li><strong>IP Address</strong> — unique numerical identifier for every device on the internet (IPv4: 32-bit, IPv6: 128-bit)</li>
+    <li><strong>Domain Name System (DNS)</strong> — translates human-readable names (google.com) to IP addresses</li>
+    <li><strong>Routing</strong> — process of forwarding packets across multiple networks using routing protocols (OSPF, BGP)</li>
+    <li><strong>ISP (Internet Service Provider)</strong> — companies providing internet access (Tier 1, 2, 3 hierarchy)</li>
+    <li><strong>World Wide Web (WWW)</strong> — hyperlinked documents served over HTTP; invented by Tim Berners-Lee (1989)</li>
+  </ul>
+
+  <h3>Internet Infrastructure Layers</h3>
+  <table class="tbl">
+    <tr><th>Layer</th><th>Component</th><th>Role</th></tr>
+    <tr><td>Physical</td><td>Submarine cables, fiber, wireless towers</td><td>Carry bits globally</td></tr>
+    <tr><td>Network</td><td>Routers, IXPs (Internet Exchange Points)</td><td>Route packets between networks</td></tr>
+    <tr><td>Service</td><td>ISPs, CDNs, cloud providers</td><td>Deliver content &amp; connectivity</td></tr>
+    <tr><td>Application</td><td>Web servers, DNS servers, email servers</td><td>Host internet services</td></tr>
+  </table>
+</div>
+
+<!-- ══ SECTION 11: NAT ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">10</span><h2>Network Address Translation (NAT)</h2></div>
+  <p><strong class="hl">NAT</strong> is a method that allows multiple devices on a private network to share a single public IP address. It was developed as a solution to IPv4 address exhaustion.</p>
+
+  <!-- NAT diagram -->
+  <div class="sat-diagram" style="margin:.9rem 0;">
+    <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+      <rect width="640" height="180" fill="#060e1a" rx="8"/>
+      <!-- Private network -->
+      <rect x="15" y="20" width="200" height="140" rx="6" fill="rgba(99,102,241,.05)" stroke="rgba(99,102,241,.3)" stroke-width="1"/>
+      <text x="115" y="38" text-anchor="middle" fill="#a5b4fc" font-size="9" font-family="IBM Plex Mono">PRIVATE NETWORK</text>
+      <rect x="30" y="48" width="80" height="26" rx="4" fill="#0d1e35" stroke="#1b2d45"/>
+      <text x="70" y="65" text-anchor="middle" fill="#607a95" font-size="8.5" font-family="IBM Plex Mono">192.168.1.10</text>
+      <rect x="30" y="84" width="80" height="26" rx="4" fill="#0d1e35" stroke="#1b2d45"/>
+      <text x="70" y="101" text-anchor="middle" fill="#607a95" font-size="8.5" font-family="IBM Plex Mono">192.168.1.11</text>
+      <rect x="30" y="120" width="80" height="26" rx="4" fill="#0d1e35" stroke="#1b2d45"/>
+      <text x="70" y="137" text-anchor="middle" fill="#607a95" font-size="8.5" font-family="IBM Plex Mono">192.168.1.12</text>
+      <!-- Lines to router -->
+      <line x1="110" y1="61" x2="220" y2="90" stroke="rgba(99,102,241,.4)" stroke-width="1"/>
+      <line x1="110" y1="97" x2="220" y2="90" stroke="rgba(99,102,241,.4)" stroke-width="1"/>
+      <line x1="110" y1="133" x2="220" y2="90" stroke="rgba(99,102,241,.4)" stroke-width="1"/>
+      <!-- Router/NAT -->
+      <rect x="215" y="68" width="100" height="44" rx="6" fill="#0d2038" stroke="#00e5ff" stroke-width="1.5"/>
+      <text x="265" y="88" text-anchor="middle" fill="#00e5ff" font-size="10" font-family="IBM Plex Mono" font-weight="bold">NAT ROUTER</text>
+      <text x="265" y="103" text-anchor="middle" fill="#607a95" font-size="8" font-family="IBM Plex Mono">PAT / NAPT</text>
+      <!-- Line to internet -->
+      <line x1="315" y1="90" x2="420" y2="90" stroke="#00e5ff" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="370" y="82" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="IBM Plex Mono">203.0.113.5</text>
+      <text x="370" y="105" text-anchor="middle" fill="#607a95" font-size="8" font-family="IBM Plex Mono">1 public IP</text>
+      <!-- Internet cloud -->
+      <ellipse cx="500" cy="90" rx="100" ry="55" fill="rgba(0,229,255,.04)" stroke="rgba(0,229,255,.2)" stroke-width="1"/>
+      <text x="500" y="87" text-anchor="middle" fill="#00e5ff" font-size="12" font-family="IBM Plex Mono">🌐</text>
+      <text x="500" y="103" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="IBM Plex Mono">INTERNET</text>
+    </svg>
+  </div>
+
+  <h3>Types of NAT</h3>
+  <table class="tbl">
+    <tr><th>Type</th><th>Description</th></tr>
+    <tr><td><strong>Static NAT</strong></td><td>One private IP maps permanently to one public IP (1:1)</td></tr>
+    <tr><td><strong>Dynamic NAT</strong></td><td>Pool of public IPs; assigned temporarily to private IPs</td></tr>
+    <tr><td><strong>PAT / NAT Overload</strong></td><td>Many private IPs share one public IP using different port numbers — most common in homes</td></tr>
+  </table>
+
+  <div class="hbox hbox-green">
+    <strong>Benefits of NAT:</strong> Conserves IPv4 addresses · Provides security (hides internal topology) · Allows private IP reuse across organisations
+  </div>
+</div>
+
+<!-- ══ SECTION 12: PoE ══ -->
+<div class="scard">
+  <div class="sh"><span class="snum">11</span><h2>Power over Ethernet (PoE)</h2></div>
+  <p><strong class="hl">PoE</strong> is a technology that delivers electrical power alongside data over a standard Ethernet cable (Cat5e or higher). It eliminates the need for separate power supplies for network devices.</p>
+
+  <h3>How PoE Works</h3>
+  <ul>
+    <li>A <strong>PoE Switch</strong> (PSE — Power Sourcing Equipment) injects DC power into the Ethernet cable</li>
+    <li>The powered device (<strong>PD</strong>) extracts the power from the cable and uses it to operate</li>
+    <li>Power is delivered over the unused wire pairs (Mode A) or all wire pairs (Mode B)</li>
+    <li>Negotiation happens via <strong>IEEE 802.3af / 802.3at / 802.3bt</strong> standards</li>
+  </ul>
+
+  <h3>PoE Standards Comparison</h3>
+  <table class="tbl">
+    <tr><th>Standard</th><th>Max Power</th><th>Common Use</th></tr>
+    <tr><td><strong>IEEE 802.3af (PoE)</strong></td><td>15.4 W</td><td>IP phones, basic cameras</td></tr>
+    <tr><td><strong>IEEE 802.3at (PoE+)</strong></td><td>30 W</td><td>PTZ cameras, video phones</td></tr>
+    <tr><td><strong>IEEE 802.3bt (PoE++)</strong></td><td>60 W / 100 W</td><td>Laptops, TVs, LED lighting</td></tr>
+  </table>
+
+  <div class="hbox hbox-cyan">
+    <strong>Common PoE-powered devices:</strong> IP surveillance cameras · VoIP phones · Wireless access points · Smart lighting · IoT sensors · Thin clients
+  </div>
+</div>
+
+<!-- ══ SECTION 13: VIDEOS ══ -->
+<div class="scard" id="videos">
+  <div class="sh"><span class="snum">12</span><h2>Video References</h2></div>
+  <p>Five video references to support the topics covered in this assignment:</p>
+
+  <div class="vid-wrap">
+    <iframe src="https://youtu.be/579tFNgIogw?t=25" allowfullscreen title="Data Communication Overview"></iframe>
+  </div>
+  <p class="vid-lbl">▶ Video 1 — Data Communication &amp; Networking Overview</p>
+  <p style="text-align:center;margin-top:.4rem;"><a class="flink" href="https://www.youtube.com/watch?v=579tFNgIogw&t=25s" target="_blank" rel="noopener noreferrer">▶ Watch on YouTube</a></p>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2024 &nbsp;<span>Stanley Mawuli Ataglo</span> &nbsp;·&nbsp; PUIT/24210131 &nbsp;·&nbsp; Pentecost University, Ghana &nbsp;·&nbsp; Data Communication Assignment
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
